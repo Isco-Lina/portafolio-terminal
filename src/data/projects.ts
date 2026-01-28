@@ -52,8 +52,8 @@ export const projects: Project[] = [
     stack: ['Astro', 'TypeScript', 'Bootstrap 5', 'CSS3', 'Netlify'],
     type: 'Personal',
     year: 2026,
-    demoUrl: 'https://franciscomolina.dev',
-    githubUrl: 'https://github.com/francisco-molina/portafolio-terminal',
+    demoUrl: 'https://francisco-molina.netlify.app/',
+    githubUrl: 'https://github.com/Isco-Lina/portafolio-terminal',
     featured: true,
   },
 ];
