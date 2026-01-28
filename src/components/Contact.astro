@@ -1,0 +1,194 @@
+---
+import { contactInfo } from "../data/experience";
+---
+
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">contact --send</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-form">
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">
+                <span class="command-prompt"></span>name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                placeholder="Ingresa tu nombre completo"
+              />
+              <div class="invalid-feedback">Por favor ingresa tu nombre</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                <span class="command-prompt"></span>email
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                placeholder="tu@email.com"
+              />
+              <div class="invalid-feedback">
+                Por favor ingresa un email válido
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">
+                <span class="command-prompt"></span>message
+              </label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="5"
+                required
+                aria-required="true"
+                placeholder="Ingesa tu mensaje..."></textarea>
+              <div class="invalid-feedback">Por favor ingresa un mensaje</div>
+            </div>
+
+            <button type="submit" class="btn btn-terminal">
+              enviar_mensaje
+            </button>
+
+            <div id="formFeedback" class="mt-3" style="display: none;"></div>
+          </form>
+        </div>
+
+        <div class="mt-5 text-center">
+          <h3 class="h5 text-accent mb-4">
+            <span class="command-prompt"></span>links --social
+          </h3>
+          <div class="social-links">
+            <a
+              href={`mailto:${contactInfo.email}`}
+              aria-label="Enviar email"
+              title="Email"
+            >
+              <i class="bi bi-envelope"></i>
+            </a>
+            <a
+              href={contactInfo.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver perfil de LinkedIn"
+              title="LinkedIn"
+            >
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a
+              href={contactInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver perfil de GitHub"
+              title="GitHub"
+            >
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Validación de formulario 
+  const form = document.getElementById("contactForm") as HTMLFormElement;
+  const formFeedback = document.getElementById(
+    "formFeedback",
+  ) as HTMLDivElement;
+
+  form.addEventListener("submit", async (e: Event) => {
+    e.preventDefault();
+
+    // Limpiar validaciones previas
+    form.classList.remove("was-validated");
+    formFeedback.style.display = "none";
+
+    // Validar campos
+    const nameInput = document.getElementById("name") as HTMLInputElement;
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const messageInput = document.getElementById(
+      "message",
+    ) as HTMLTextAreaElement;
+
+    let isValid = true;
+
+    // Validar nombre
+    if (nameInput.value.trim().length < 2) {
+      isValid = false;
+      nameInput.classList.add("is-invalid");
+    } else {
+      nameInput.classList.remove("is-invalid");
+      nameInput.classList.add("is-valid");
+    }
+
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value.trim())) {
+      isValid = false;
+      emailInput.classList.add("is-invalid");
+    } else {
+      emailInput.classList.remove("is-invalid");
+      emailInput.classList.add("is-valid");
+    }
+
+    // Validar mensaje
+    if (messageInput.value.trim().length < 10) {
+      isValid = false;
+      messageInput.classList.add("is-invalid");
+    } else {
+      messageInput.classList.remove("is-invalid");
+      messageInput.classList.add("is-valid");
+    }
+
+    if (isValid) {
+      // Simular envío de formulario
+      formFeedback.className = "alert alert-success mt-3";
+      formFeedback.textContent =
+        "✓ Mensaje enviado correctamente. Te contactaré pronto!";
+      formFeedback.style.display = "block";
+
+      // Limpiar formulario
+      form.reset();
+
+      // Limpiar clases de validación
+      const inputs = form.querySelectorAll(".is-valid");
+      inputs.forEach((input) => input.classList.remove("is-valid"));
+    } else {
+      formFeedback.className = "alert alert-danger mt-3";
+      formFeedback.textContent =
+        "✗ Por favor completa todos los campos correctamente.";
+      formFeedback.style.display = "block";
+    }
+  });
+</script>
+
+<style>
+  .is-invalid {
+    border-color: var(--terminal-error) !important;
+  }
+
+  .is-valid {
+    border-color: var(--terminal-accent) !important;
+  }
+
+  .invalid-feedback {
+    color: var(--terminal-error);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+</style>

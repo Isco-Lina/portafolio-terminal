@@ -1,0 +1,74 @@
+---
+import { experiences } from "../data/experience";
+
+const educationItems = experiences.filter((exp) => exp.type === "education");
+const workItems = experiences.filter((exp) => exp.type === "work");
+---
+
+<section id="experience" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">experience --show-all</h2>
+
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <h3 class="h4 text-accent mb-4">
+          <span class="command-prompt"></span>education.log
+        </h3>
+        <div class="timeline">
+          {
+            educationItems.map((item) => (
+              <div class="timeline-item">
+                <div class="terminal-card">
+                  <h4 class="h5 text-accent mb-2">{item.title}</h4>
+                  <p class="text-muted mb-2">
+                    {item.institution} | {item.period}
+                  </p>
+                  {item.status && (
+                    <span class="badge bg-info mb-2">{item.status}</span>
+                  )}
+                  <p class="mb-0">{item.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-4">
+        <h3 class="h4 text-accent mb-4">
+          <span class="command-prompt"></span>work.log
+        </h3>
+        <div class="timeline">
+          {
+            workItems.map((item) => (
+              <div class="timeline-item">
+                <div class="terminal-card">
+                  <h4 class="h5 text-accent mb-2">{item.title}</h4>
+                  <p class="text-muted mb-2">
+                    {item.institution} | {item.period}
+                  </p>
+                  {item.status && (
+                    <span class="badge bg-success mb-2">{item.status}</span>
+                  )}
+                  <p class="mb-0">{item.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-item .terminal-card {
+    margin-left: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 1.5rem;
+    }
+  }
+</style>

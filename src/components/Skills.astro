@@ -1,0 +1,54 @@
+---
+import { getSkillsByCategory, getCategories } from "../data/skills";
+
+const categories = getCategories();
+---
+
+<section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">skills --list</h2>
+
+    <div class="row">
+      {
+        categories.map((category) => {
+          const categorySkills = getSkillsByCategory(category);
+          return (
+            <div class="col-md-6 mb-4">
+              <div class="skills-category">
+                <h3 class="skills-category-title">{category}</h3>
+                <div class="skills-grid">
+                  {categorySkills.map((skill) => (
+                    <div class="skill-item">
+                      <span>{skill.name}</span>
+                      {skill.level && (
+                        <small class="ms-auto text-muted">
+                          ({skill.level})
+                        </small>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-item {
+    justify-content: space-between;
+  }
+
+  .skills-grid {
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

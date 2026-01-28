@@ -1,0 +1,111 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section id="hero" class="hero-terminal">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="terminal-window fade-in">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <button class="terminal-button red" aria-label="Cerrar"></button>
+              <button class="terminal-button yellow" aria-label="Minimizar"
+              ></button>
+              <button class="terminal-button green" aria-label="Maximizar"
+              ></button>
+            </div>
+            <div class="terminal-title">francisco@portfolio:~</div>
+          </div>
+          <div class="terminal-content">
+            <div class="mb-4">
+              <p class="mb-2">
+                <span class="command-prompt"></span>
+                <span class="text-accent">whoami</span>
+              </p>
+              <div class="output-line">
+                <h1 class="display-4 mb-0">{profile.name}</h1>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="mb-2">
+                <span class="command-prompt"></span>
+                <span class="text-accent">role</span>
+              </p>
+              <div class="output-line">
+                <p class="lead mb-0">{profile.title}</p>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="mb-2">
+                <span class="command-prompt"></span>
+                <span class="text-accent">status</span>
+              </p>
+              <div class="output-line">
+                <p class="mb-1">
+                  <strong>- Ubicación:</strong>
+                  {profile.location}
+                </p>
+                <p class="mb-0">
+                  <strong>- Estado:</strong>
+                  {profile.availability}
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a
+                href="#projects"
+                class="btn btn-terminal"
+                aria-label="Ver proyectos"
+              >
+                ver_proyectos
+              </a>
+              <a
+                href="/cv-francisco-molina.pdf"
+                target="_blank"
+                class="btn btn-terminal btn-terminal-secondary"
+                aria-label="Descargar CV"
+              >
+                descargar_cv
+              </a>
+              <a
+                href="#contact"
+                class="btn btn-terminal btn-terminal-secondary"
+                aria-label="Contactar"
+              >
+                contactarme
+              </a>
+            </div>
+
+            <div class="mt-4">
+              <span class="cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-terminal {
+    padding: 8rem 0 4rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-terminal {
+      padding: 6rem 0 3rem;
+    }
+
+    .display-4 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 1rem;
+    }
+  }
+</style>

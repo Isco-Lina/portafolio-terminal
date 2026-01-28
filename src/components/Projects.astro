@@ -1,0 +1,131 @@
+---
+import { projects } from "../data/projects";
+
+---
+
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">projects --filter=all</h2>
+
+    <div class="project-filters mb-4">
+      <button
+        class="filter-btn active"
+        data-filter="all"
+        aria-label="Mostrar todos los proyectos"
+      >
+        --all
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="Universidad"
+        aria-label="Filtrar proyectos de Universidad"
+      >
+        --filter=universidad
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="Personal"
+        aria-label="Filtrar proyectos personales"
+      >
+        --filter=personal
+      </button>
+    </div>
+
+    <div class="row" id="projects-container">
+      {
+        projects.map((project) => (
+          <div class="col-lg-6 mb-4 project-item" data-type={project.type}>
+            <div class="terminal-card h-100">
+              <div class="terminal-card-header">
+                {project.title}
+                {project.featured && (
+                  <span class="badge bg-success ms-2">★ Featured</span>
+                )}
+              </div>
+
+              <div class="mb-3">
+                <span class="badge bg-secondary">{project.type}</span>
+                <span class="badge bg-info ms-2">{project.year}</span>
+              </div>
+
+              <p class="mb-3">{project.description}</p>
+
+              <div class="mb-3">
+                <strong class="text-accent">Stack:</strong>
+                <div class="mt-2">
+                  {project.stack.map((tech) => (
+                    <span class="tech-badge">{tech}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 mt-auto">
+                {project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    class="btn btn-sm btn-terminal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ver demo de ${project.title}`}
+                  >
+                    demo
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    class="btn btn-sm btn-terminal btn-terminal-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ver código en GitHub de ${project.title}`}
+                  >
+                    github
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  // Filtrado de proyectos 
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectItems = document.querySelectorAll(".project-item");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      // Actualizar botón activo
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Filtrar proyectos
+      projectItems.forEach((item) => {
+        const projectType = item.getAttribute("data-type");
+
+        if (filter === "all" || filter === projectType) {
+          (item as HTMLElement).style.display = "block";
+        } else {
+          (item as HTMLElement).style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .terminal-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    font-family: "Consolas", monospace;
+    font-size: 0.75rem;
+  }
+</style>

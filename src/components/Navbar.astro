@@ -1,0 +1,98 @@
+---
+// Navbar con scroll suave y sticky
+---
+
+<nav class="navbar navbar-terminal navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand text-accent" href="#hero">
+      <span class="command-prompt"></span>francisco.dev
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about" aria-label="Ir a sección About"
+            >sobre mi</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills" aria-label="Ir a sección Skills"
+            >habilidades</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#projects"
+            aria-label="Ir a sección Projects">proyectos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#experience"
+            aria-label="Ir a sección Experience">experiencia</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" aria-label="Ir a sección Contact"
+            >contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Activar enlace activo según scroll
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function activateNavLink(): void {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach((section) => {
+      const htmlSection = section as HTMLElement;
+      const sectionHeight = htmlSection.offsetHeight;
+      const sectionTop = htmlSection.offsetTop - 100;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateNavLink);
+</script>
+
+<style>
+  .navbar-toggler {
+    border-color: var(--terminal-border);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(168, 230, 207, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">about</h2>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="terminal-card">
+          <div class="terminal-card-header">whois francisco</div>
+          <p class="mb-4">{profile.about}</p>
+
+          <div class="mt-4">
+            <h3 class="h5 text-accent mb-3">
+              <span class="command-prompt"></span>cat strengths.txt
+            </h3>
+            <ul class="terminal-list">
+              {profile.strengths.map((strength) => <li>{strength}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="terminal-card">
+          <div class="terminal-card-header">info</div>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <strong class="text-accent">Formación actual:</strong><br />
+              {profile.currentStudy}
+            </li>
+            <li class="mb-2">
+              <strong class="text-accent">Título previo:</strong><br />
+              {profile.previousDegree}
+            </li>
+            <li class="mb-2">
+              <strong class="text-accent">Próximo título:</strong><br />
+              {profile.upcomingDegree}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

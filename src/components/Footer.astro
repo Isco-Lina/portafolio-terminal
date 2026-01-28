@@ -1,0 +1,35 @@
+---
+import { profile } from "../data/profile";
+---
+
+<footer class="footer-terminal">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <p class="mb-1">
+          <span class="command-prompt"></span>
+          <strong class="text-accent">{profile.name}</strong>
+        </p>
+        <p class="text-muted mb-0">
+          {profile.targetRole}
+        </p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <p class="mb-1 text-muted">
+          {profile.location}
+        </p>
+        <p class="mb-0">
+          <small
+            >© {new Date().getFullYear()} - Construido con Astro + TypeScript + Bootstrap</small
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer p {
+    font-size: 0.9rem;
+  }
+</style>

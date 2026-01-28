@@ -1,0 +1,221 @@
+/* Importar Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Variables globales */
+:root {
+  --terminal-bg: #0d0d0d;
+  --terminal-bg-secondary: #111111;
+  --terminal-text: #a8e6cf;
+  --terminal-accent: #00d9ff;
+  --terminal-prompt: #ffd93d;
+  --terminal-error: #ff6b9d;
+  --terminal-border: #2a2a2a;
+  --terminal-shadow: rgba(0, 217, 255, 0.1);
+}
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: var(--terminal-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--terminal-text);
+  text-decoration: underline;
+}
+
+/* Botones personalizados estilo terminal */
+.btn-terminal {
+  background-color: transparent;
+  border: 2px solid var(--terminal-accent);
+  color: var(--terminal-accent);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Consolas', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-terminal::before {
+  content: '> ';
+  margin-right: 0.25rem;
+}
+
+.btn-terminal:hover {
+  background-color: var(--terminal-accent);
+  color: var(--terminal-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--terminal-shadow);
+}
+
+.btn-terminal-secondary {
+  border-color: var(--terminal-text);
+  color: var(--terminal-text);
+}
+
+.btn-terminal-secondary:hover {
+  background-color: var(--terminal-text);
+  color: var(--terminal-bg);
+}
+
+/* Cards estilo terminal */
+.terminal-card {
+  background-color: var(--terminal-bg-secondary);
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.terminal-card:hover {
+  border-color: var(--terminal-accent);
+  box-shadow: 0 0 20px var(--terminal-shadow);
+  transform: translateY(-2px);
+}
+
+.terminal-card-header {
+  color: var(--terminal-accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-card-header::before {
+  content: '$ ';
+  color: var(--terminal-prompt);
+  margin-right: 0.5rem;
+}
+
+/* Badges de tecnologías */
+.tech-badge {
+  display: inline-block;
+  background-color: rgba(0, 217, 255, 0.1);
+  border: 1px solid var(--terminal-accent);
+  color: var(--terminal-accent);
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+  background-color: rgba(0, 217, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Secciones */
+section {
+  padding: 4rem 0;
+  min-height: auto;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+/* Prompt de sección */
+.section-prompt {
+  color: var(--terminal-prompt);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-prompt::before {
+  content: '> ';
+  margin-right: 0.5rem;
+}
+
+/* Lista estilo terminal */
+.terminal-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.terminal-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.terminal-list li::before {
+  content: '→';
+  color: var(--terminal-accent);
+  position: absolute;
+  left: 0;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-text);
+}
+
+/* Utilidades */
+.text-accent {
+  color: var(--terminal-accent);
+}
+
+.text-prompt {
+  color: var(--terminal-prompt);
+}
+
+.text-error {
+  color: var(--terminal-error);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-prompt {
+    font-size: 1.25rem;
+  }
+}

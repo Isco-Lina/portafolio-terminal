@@ -1,0 +1,29 @@
+{
+  "name": "portafolio-terminal",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portafolio profesional con tema terminal/CLI - Francisco Molina Carrillo",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^5.16.14",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "typescript": "^5.3.3"
+  }
+}
