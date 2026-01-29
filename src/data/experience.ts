@@ -45,6 +45,6 @@ export const experiences: Experience[] = [
 
 export const contactInfo: ContactInfo = {
   email: 'molina.carrillo1996@gmail.com',
-  linkedIn: 'https://linkedin.com/in/francisco-molina-carrillo',
+  linkedIn: 'https://www.linkedin.com/in/francisco-molina-carrillo-680549304',
   github: 'https://github.com/Isco-Lina',
 };
