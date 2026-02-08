@@ -32,6 +32,6 @@ export const certifications: Certification[] = [
       'Carreras en Data Analytics',
       'Conceptos base de Analítica',
     ],
-    verifiedUrl: 'https://www.credly.com/badges/70bf4106-364a-4300-bd13-e5c18ce99c72/public_url',
+    verifiedUrl: 'https://www.credly.com/badges/41177c6b-eabf-42e4-8b4f-06b24b11ac97/public_url',
   },
 ];
