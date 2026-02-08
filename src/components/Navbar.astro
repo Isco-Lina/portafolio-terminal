@@ -21,33 +21,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#about" aria-label="Ir a sección About"
-            >sobre mi</a
+          <a class="nav-link" href="#about" aria-label="Ir a sección About">sobre mi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills" aria-label="Ir a sección Skills">habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certifications" aria-label="Ir a sección Certifications"
+            >certificaciones</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#skills" aria-label="Ir a sección Skills"
-            >habilidades</a
+          <a class="nav-link" href="#projects" aria-label="Ir a sección Projects">proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience" aria-label="Ir a sección Experience">experiencia</a
           >
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#projects"
-            aria-label="Ir a sección Projects">proyectos</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#experience"
-            aria-label="Ir a sección Experience">experiencia</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact" aria-label="Ir a sección Contact"
-            >contacto</a
-          >
+          <a class="nav-link" href="#contact" aria-label="Ir a sección Contact">contacto</a>
         </li>
       </ul>
     </div>
@@ -56,8 +48,8 @@
 
 <script>
   // Activar enlace activo según scroll
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   function activateNavLink(): void {
     const scrollY = window.pageYOffset;
@@ -66,20 +58,20 @@
       const htmlSection = section as HTMLElement;
       const sectionHeight = htmlSection.offsetHeight;
       const sectionTop = htmlSection.offsetTop - 100;
-      const sectionId = section.getAttribute("id");
+      const sectionId = section.getAttribute('id');
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.classList.add("active");
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
           }
         });
       }
     });
   }
 
-  window.addEventListener("scroll", activateNavLink);
+  window.addEventListener('scroll', activateNavLink);
 </script>
 
 <style>

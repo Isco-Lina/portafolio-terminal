@@ -1,0 +1,110 @@
+---
+import { certifications } from '../data/certifications';
+---
+
+<section id="certifications" class="py-5">
+  <div class="container">
+    <h2 class="section-prompt">certifications --list</h2>
+
+    <div class="row">
+      {
+        certifications.map((cert) => (
+          <div class="col-lg-6 mb-4">
+            <div class="terminal-card">
+              <h3 class="h5 text-accent mb-2">{cert.title}</h3>
+              <p class="text-muted mb-3">
+                {cert.institution} · {cert.date}
+              </p>
+
+              <p class="cert-description mb-3">{cert.description}</p>
+
+              {cert.skills && cert.skills.length > 0 && (
+                <div class="skills-section">
+                  <p class="skills-label mb-2">
+                    <strong>Competencias:</strong>
+                  </p>
+                  <div class="skills-tags mb-3">
+                    {cert.skills.map((skill) => (
+                      <span class="skill-tag">{skill}</span>
+                    ))}
+                  </div>
+                  {cert.verifiedUrl && (
+                    <div class="d-flex gap-2 mt-auto">
+                      <a
+                        href={cert.verifiedUrl}
+                        class="btn btn-sm btn-terminal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Ver credencial verificada de ${cert.title}`}
+                      >
+                        Ver credencial
+                      </a>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .terminal-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cert-description {
+    color: var(--terminal-text);
+    line-height: 1.6;
+  }
+
+  .skills-section {
+    margin-top: auto;
+  }
+
+  .skills-label {
+    color: var(--terminal-text);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--terminal-accent);
+    color: var(--terminal-accent);
+    border-radius: 3px;
+    background: rgba(168, 230, 207, 0.05);
+    transition: all 0.2s ease;
+    line-height: 1.4;
+  }
+
+  .skill-tag:hover {
+    background: rgba(168, 230, 207, 0.1);
+    border-color: var(--terminal-text);
+    color: var(--terminal-text);
+  }
+
+  @media (max-width: 768px) {
+    .col-lg-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+</style>

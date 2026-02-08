@@ -48,6 +48,17 @@ export interface Experience {
   status?: 'En curso' | 'Completado' | 'Por completar';
 }
 
+// Tipo para certificación
+export interface Certification {
+  id: string;
+  title: string;
+  institution: string;
+  date: string;
+  description: string;
+  skills?: string[];
+  verifiedUrl?: string;
+}
+
 // Tipo para datos de contacto
 export interface ContactInfo {
   email: string;
