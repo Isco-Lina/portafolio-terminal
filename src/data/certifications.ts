@@ -2,6 +2,27 @@ import type { Certification } from '../types';
 
 export const certifications: Certification[] = [
   {
+    id: 'linux-ultimate',
+    title: 'Ultimate Linux: de uso de la terminal a shell scripting',
+    institution: 'Udemy',
+    date: 'Mayo 2024',
+    description:
+      'Formación completa en administración de linux utilizando Ubuntu, desde fundamentos del sistema y línea de comandos hasta automatización mediante shell scripting.',
+    skills: [
+      'Linux (Ubuntu)',
+      'Terminal y línea de comandos',
+      'Sistema de archivos Linux',
+      'Permisos y usuarios',
+      'Gestión de procesos',
+      'Redes en Linux',
+      'Gestión de paquetes (APT)',
+      'Redirecciones y pipelines',
+      'Expresiones regulares',
+      'Shell Scripting',
+    ],
+    verifiedUrl: '/certificates/certificacion-linux.pdf',
+  },
+  {
     id: 'modern-ai',
     title: 'Introducción a la IA Moderna',
     institution: 'Cisco Networking Academy',
