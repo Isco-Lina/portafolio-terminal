@@ -18,16 +18,17 @@ export const projects: Project[] = [
     id: 'reloj-control',
     title: 'Sistema Reloj Control - Gestión de Asistencia',
     description:
-      'Aplicación web full stack para la gestión de asistencia laboral. Permite registro y autenticación de usuarios, marcaje de entrada y salida, filtrado de registros por fecha (día, mes o rangos personalizados) y generación automática de reportes. Incluye exportación de datos a PDF y Excel, implementando lógica de negocio para control horario y administración de registros.',
+      'Aplicación web tipo PWA para la gestión de asistencia laboral con autenticación de usuarios y control horario individual. Permite registro de entrada y salida, cálculo automático de horas trabajadas con descuento de colación, filtrado por rangos personalizados y generación de reportes en PDF y Excel. Implementa autenticación segura con Firebase, reglas de acceso por usuario y despliegue en entorno cloud.',
     stack: [
       'React',
       'Vite',
       'Bootstrap 5',
-      'Node.js',
-      'Express',
-      'Generación de PDF',
-      'Exportación a Excel',
-      'Git/GitHub',
+      'Firebase (Auth & Firestore)',
+      'vite-plugin-pwa',
+      'jsPDF',
+      'SheetJS',
+      'Netlify',
+      'Git/GitHub'
     ],
     type: 'Personal',
     year: 2026,
