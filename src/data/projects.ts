@@ -2,6 +2,54 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: 'portafolio-terminal',
+    title: 'Portafolio Terminal',
+    description:
+      'Portafolio profesional desarrollado con Astro y TypeScript, con interfaz inspirada en una terminal de comandos. El proyecto implementa arquitectura por componentes, generación de contenido estático para alto rendimiento y SEO, diseño responsive con Bootstrap y un sistema visual orientado a una experiencia de usuario moderna e interactiva.',
+    stack: ['Astro', 'TypeScript', 'Bootstrap 5', 'CSS3', 'Netlify'],
+    type: 'Personal',
+    year: 2026,
+    demoUrl: 'https://francisco-molina.netlify.app/',
+    githubUrl: 'https://github.com/Isco-Lina/portafolio-terminal',
+    featured: true,
+  },
+
+  {
+    id: 'reloj-control',
+    title: 'Sistema Reloj Control - Gestión de Asistencia',
+    description:
+      'Aplicación web full stack para la gestión de asistencia laboral. Permite registro y autenticación de usuarios, marcaje de entrada y salida, filtrado de registros por fecha (día, mes o rangos personalizados) y generación automática de reportes. Incluye exportación de datos a PDF y Excel, implementando lógica de negocio para control horario y administración de registros.',
+    stack: [
+      'React',
+      'Vite',
+      'Bootstrap 5',
+      'Node.js',
+      'Express',
+      'Generación de PDF',
+      'Exportación a Excel',
+      'Git/GitHub',
+    ],
+    type: 'Personal',
+    year: 2026,
+    demoUrl: 'https://clock-control.netlify.app/',
+    githubUrl: 'https://github.com/Isco-Lina/ClockControl',
+    featured: true,
+  },
+
+  {
+    id: 'carrito-compras-firebase',
+    title: 'Ferreteria El Maestro - Carrito de Compras',
+    description:
+      'Aplicación web de carrito de compras desarrollada con React y Firebase para la venta de herramientas y materiales de construcción. Incluye catálogo de productos, formulario de contacto, subida de archivosy autenticación de usuarios.',
+    stack: ['React', 'Vite', 'Firebase', 'Bootstrap 5', 'Apache Cordova', 'Netlify'],
+    type: 'Universidad',
+    year: 2025,
+    demoUrl: 'https://carrito-compras-firebase.netlify.app/',
+    githubUrl: 'https://github.com/Isco-Lina/carrito-compras-firebase',
+    featured: false,
+  },
+
+  {
     id: 'tienda-online',
     title: 'Maqueta-Outdoor-Web',
     description:
@@ -21,18 +69,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/Isco-Lina/Maqueta-Outdoor-Web',
     featured: false,
   },
-  {
-    id: 'carrito-compras-firebase',
-    title: 'Ferreteria El Maestro - Carrito de Compras',
-    description:
-      'Aplicación web de carrito de compras desarrollada con React y Firebase para la venta de herramientas y materiales de construcción. Incluye catálogo de productos, formulario de contacto, subida de archivosy autenticación de usuarios.',
-    stack: ['React', 'Vite', 'Firebase', 'Bootstrap 5', 'Apache Cordova', 'Netlify'],
-    type: 'Universidad',
-    year: 2025,
-    demoUrl: 'https://carrito-compras-firebase.netlify.app/',
-    githubUrl: 'https://github.com/Isco-Lina/carrito-compras-firebase',
-    featured: false,
-  },
+
   {
     id: 'calculo-calificaciones-formulario-registro',
     title: 'Calculadora de Calificaciones y Formulario de Registro',
@@ -43,18 +80,6 @@ export const projects: Project[] = [
     year: 2024,
     demoUrl: 'https://calculonotas-formularioregistro.netlify.app/',
     githubUrl: 'https://github.com/Isco-Lina/CalculoCalificaciones-FormularioRegistro.git',
-  },
-  {
-    id: 'portafolio-terminal',
-    title: 'Portafolio Terminal',
-    description:
-      'Portafolio profesional desarrollado con Astro y TypeScript, con interfaz inspirada en una terminal de comandos. El proyecto implementa arquitectura por componentes, generación de contenido estático para alto rendimiento y SEO, diseño responsive con Bootstrap y un sistema visual orientado a una experiencia de usuario moderna e interactiva.',
-    stack: ['Astro', 'TypeScript', 'Bootstrap 5', 'CSS3', 'Netlify'],
-    type: 'Personal',
-    year: 2026,
-    demoUrl: 'https://francisco-molina.netlify.app/',
-    githubUrl: 'https://github.com/Isco-Lina/portafolio-terminal',
-    featured: true,
   },
 ];
 
