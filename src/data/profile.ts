@@ -1,23 +1,23 @@
 import type { Profile } from '../types';
 
 export const profile: Profile = {
-  name: 'Francisco Javier Antonio Molina Carrillo',
+  name: 'Francisco Molina Carrillo',
   title:
-    'Ingeniero de Ejecución en Administración | Estudiante de Ingeniería en Informática | Próximo Analista programador | Desarrollador Web Full Stack',
+    'Analista de Compras y Datos | Ingeniero en Administración | Estudiante de Ingeniería en Informática',
   currentStudy: 'Ingeniería en Informática (3er año)',
   previousDegree: 'Ingeniero de Ejecución en Administración',
   upcomingDegree: 'Analista Programador',
-  targetRole: 'Desarrollador Web Full Stack en formación',
+  targetRole:
+    'Data Analyst / Business Analyst enfocado en operaciones, compras y optimización de procesos',
   location: 'Región del Maule, Chile',
-  availability: 'Disponibilidad inmediata',
-  about: `Ingeniero de Ejecución en Administración y estudiante de Ingeniería en Informática (3° año), en proceso de formación como Desarrollador Web Full Stack. Experiencia académica en desarrollo de proyectos utilizando HTML, CSS, JavaScript, Vue.js y Python (Flask). 
-  Actualmente profundizando en React, Node.js y Express, incorporando fundamentos de Ciencia de Datos e Inteligencia Artificial aplicados al desarrollo de soluciones tecnológicas.`,
+  availability: 'Data Analytics, Tecnología y Optimización de Procesos',
+  about: `Ingeniero de Ejecución en Administración y estudiante de Ingeniería en Informática (3° año). Actualmente trabajo en el área de compras participando en análisis de proveedores, cotizaciones y gestión de órdenes de compra en proyectos de infraestructura.
+Paralelamente desarrollo proyectos tecnológicos enfocados en análisis de datos y desarrollo web utilizando Python, SQL y tecnologías web como JavaScript y React.`,
   strengths: [
-    'Capacidad de análisis y resolución de problemas complejos',
-    'Rápido aprendizaje de nuevas tecnologías y frameworks',
-    'Experiencia combinada en tecnología y gestión empresarial',
-    'Compromiso con código limpio y buenas prácticas',
-    'Trabajo autónomo y en equipo',
-    'Orientación a resultados y mejora continua',
+    'Análisis de datos y pensamiento analítico',
+    'Gestión de compras y evaluación de proveedores',
+    'Resolución de problemas y mejora de procesos',
+    'Aprendizaje rápido de tecnologías',
+    'Experiencia en negocio, operaciones y tecnología',
   ],
 };

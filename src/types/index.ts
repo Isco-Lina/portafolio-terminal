@@ -13,7 +13,7 @@ export interface Profile {
 }
 
 // Categorías de skills
-export type SkillCategory = 'Frontend' | 'Backend' | 'Database' | 'Tools';
+export type SkillCategory = 'Data' | 'Frontend' | 'Backend' | 'Database' | 'Tools';
 
 // Tipo para skill individual
 export interface Skill {
