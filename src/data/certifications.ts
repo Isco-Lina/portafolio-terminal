@@ -55,4 +55,22 @@ export const certifications: Certification[] = [
     ],
     verifiedUrl: 'https://www.credly.com/badges/41177c6b-eabf-42e4-8b4f-06b24b11ac97/public_url',
   },
+
+  {
+    id: 'excel-avanzado',
+    title: 'Universidad Excel: Básico, Intermedio y Avanzado',
+    institution: 'Udemy',
+    date: 'Marzo 2026',
+    description:
+      'Curso completo de Excel enfocado en análisis de datos, desde nivel básico hasta avanzado. Incluye uso de funciones, tablas dinámicas, visualización de información y herramientas como Power Query para limpieza, transformación y combinación de datos.',
+    skills: [
+      'Microsoft Excel',
+      'Tablas dinámicas',
+      'Power Query',
+      'Análisis de datos',
+      'Transformación de datos',
+      'Funciones avanzadas',
+    ],
+    verifiedUrl: '/certificates/certificacion-excel.pdf',
+  },
 ];
